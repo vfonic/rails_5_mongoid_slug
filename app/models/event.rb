@@ -3,4 +3,5 @@ class Event
   field :title
   field :description
   field :category
+  include EventSlug
 end
