@@ -26,3 +26,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mongoid', '~> 6.0.3'
 gem 'figaro'
+gem 'pry-rails'
+gem 'awesome_print'
