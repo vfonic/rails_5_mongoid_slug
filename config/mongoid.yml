@@ -1,0 +1,29 @@
+default: &default
+  clients:
+    default:
+      database: <%= ENV.fetch('MONGO_DB_DATABASE') %>
+      hosts: <%= ENV.fetch('MONGO_DB_HOSTS') %>
+      options:
+        user: <%= ENV.fetch('MONGO_DB_USER') %>
+        password: <%= ENV.fetch('MONGO_DB_PASSWORD') %>
+  options:
+    # Raise an error when defining a scope with the same name as an
+    # existing method. (default: false)
+    scope_overwrite_exception: true
+
+    # Raise an error when defining a field with the same name as an
+    # existing method. (default: false)
+    duplicate_fields_exception: true
+
+    # Control whether `belongs_to` association is required. By default
+    # `belongs_to` will trigger a validation error if the association
+    # is not present. (default: true)
+    belongs_to_required_by_default: false
+development:
+  <<: *default
+test:
+  <<: *default
+staging:
+  <<: *default
+production:
+  <<: *default
